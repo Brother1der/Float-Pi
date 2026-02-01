@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "/home/float/Downloads/rfm9x_check.py", line 48, in <module>
+    CS = DigitalInOut(board.CE1)
+  File "/usr/local/lib/python3.13/dist-packages/digitalio.py", line 209, in __init__
+    self.direction = Direction.INPUT
+    ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/digitalio.py", line 239, in direction
+    self._pin.init(mode=Pin.IN)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/adafruit_blinka/microcontroller/generic_linux/rpi_gpio_pin.py", line 41, in init
+    GPIO.setup(self.id, GPIO.IN)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/RPi/GPIO/__init__.py", line 696, in setup
+    _check(lgpio.gpio_claim_input(_chip, gpio, {
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+        PUD_OFF:  lgpio.SET_PULL_NONE,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        PUD_DOWN: lgpio.SET_PULL_DOWN,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        PUD_UP:   lgpio.SET_PULL_UP,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    }[pull_up_down]))
+    ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/lgpio.py", line 755, in gpio_claim_input
+    return _u2i(_lgpio._gpio_claim_input(handle&0xffff, lFlags, gpio))
+  File "/usr/lib/python3/dist-packages/lgpio.py", line 458, in _u2i
+    raise error(error_text(v))
+lgpio.error: 'GPIO busy'
+
+
+------------------
+(program exited with code: 1)
+Press return to continue
+
